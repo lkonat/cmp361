@@ -20,6 +20,12 @@ app.get("/about", function(req,res){
 var randomFortune = fortunes[Math.floor(Math.random()*fortunes.length)];
   res.render("about",{fortune:randomFortune}); 
 });
+
+app.get("/datetime", function(req,res){
+var d = new Date();
+  res.render("datetime",{date:d});
+});
+
 //custom 404 page
 app.use(function(req, res){
   res.status(404);
